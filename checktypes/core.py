@@ -22,13 +22,13 @@ def checktype(function):
     def wrapper(*args, **kwargs):
         if args:
             raise AnnotationsException(
-                'Function {0} don`t takes positional arguments'.format(function.__name__)
+                'Function {0} does not take positional arguments'.format(function.__name__)
             )
 
         for arg_key in kwargs:
             if arg_key not in function.__annotations__:
                 raise AnnotationsException(
-                    'Function {0} do not provide arg {1}'.format(function.__name__, arg_key)
+                    'Function {0} does not provide arg {1}'.format(function.__name__, arg_key)
                 )
 
             if not isinstance(kwargs[arg_key], function.__annotations__[arg_key]):
