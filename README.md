@@ -8,7 +8,7 @@ Decorator for validating type of function arguments and return value.
 >>> @checktype
 ... def test_func(string: str) -> int:
 ...     return len(string)
-... 
+...
 >>> test_func(string=2)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -20,7 +20,7 @@ checktypes.core.AnnotationsException: Attribute string must be (str)
 >>> @checktype
 ... def test_func(string):
 ...     return len(string)
-... 
+...
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/home/marsohod/projects/python/checktypes/src/checktypes/core.py", line 19, in checktype
@@ -29,7 +29,7 @@ checktypes.core.AnnotationsNotExist: Function test_func must provide annotations
 >>> @checktype
 ... def test_func(string: str) -> int:
 ...     return string
-... 
+...
 >>> test_func(string='asd')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -41,6 +41,6 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/home/marsohod/projects/python/checktypes/src/checktypes/core.py", line 25, in wrapper
     'Function {0} don`t takes positional arguments'.format(function.__name__)
-checktypes.core.AnnotationsException: Function test_func don`t takes positional arguments
+checktypes.core.AnnotationsException: Function test_func does not take positional arguments
 
 ```
